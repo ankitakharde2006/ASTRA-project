@@ -19,6 +19,7 @@ Pipeline Stages Mapped to Day 4 Slide 13:
 """
 
 import math
+# pyrefly: ignore [missing-import]
 from openai import OpenAI
 from config import RAGConfig, get_rag_config
 from vector_store import query_vector_db
@@ -32,6 +33,7 @@ def embed_query(
     Stage 5: Query Embedding
     Embeds the user's live query into the same 2048-dimensional mathematical
     space used during the offline chunk indexing stage.
+    Validates dimensional consistency (2048 dims) and handles API errors and rate limits.
 
     [TEACHING NOTE]
     Why must the query embedding model match the chunk embedding model?
@@ -39,51 +41,9 @@ def embed_query(
     Model B (e.g. 1536-dim or different semantic coordinate system), the vector dimensions
     and coordinate meanings will not match! Always use the exact same embedding model.
     """
-    cleaned_query = query.strip()
-    if len(cleaned_query) == 0:
-        raise ValueError("User query cannot be empty.")
+    from embedding import embed_query as nim_embed_query
+    return nim_embed_query(query=query, config=config)
 
-    print("\n" + "=" * 60)
-    print("STAGE 5: QUERY EMBEDDING (NVIDIA NIM)")
-    print("=" * 60)
-    print(f"[*] Live User Query : \"{cleaned_query}\"")
-    print(f"[*] Embedding Model : {config.embed_model}")
-
-    # Branch 1: Live NVIDIA NIM Embedding API
-    if not config.use_mock_ai:
-        client = OpenAI(
-            base_url=config.nvidia_base_url,
-            api_key=config.nvidia_api_key,
-        )
-
-        response = client.embeddings.create(
-            input=[cleaned_query],
-            model=config.embed_model,
-        )
-
-        query_vector = response.data[0].embedding
-        vector_dim = len(query_vector)
-        sample_coords = [round(val, 4) for val in query_vector[:4]]
-        
-        print(f"[OK] Generated query vector ({vector_dim} dimensions).")
-        print(f"[*] Sample Coordinates : {sample_coords} ...")
-        return query_vector
-
-    # Branch 2: Offline Mock Simulation
-    print("[!] Offline mode active. Generating simulated query vector...")
-    sim_vector = []
-    seed = 0
-    for ch in cleaned_query:
-        seed = seed + ord(ch)
-
-    dim_index = 0
-    while dim_index < 64:
-        val = math.sin(seed + dim_index) * 0.5
-        sim_vector.append(round(val, 4))
-        dim_index = dim_index + 1
-
-    print("[OK] Generated simulated 64-dim query vector.")
-    return sim_vector
 
 
 def retrieve_top_k(

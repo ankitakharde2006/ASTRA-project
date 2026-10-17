@@ -1,0 +1,28 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment Variables & Secrets
+.env
+*.env
+!.env.example
+
+# Python cache & build
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# ADK & SQLite Databases
+*.db
+*.sqlite3
+.adk/
+**/__pycache__/
+**/.adk/
+
+# Operating System files
+.DS_Store
+Thumbs.db

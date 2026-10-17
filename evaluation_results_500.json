@@ -1,0 +1,189 @@
+{
+  "chunk_size": 500,
+  "chunk_overlap": 125,
+  "questions_run": [
+    "How much is the one-time remote home office setup stipend?",
+    "What is the Wi-Fi password for office visitors?",
+    "How many paid sick days are employees entitled to?"
+  ],
+  "question_count": 3,
+  "test_results": [
+    {
+      "question_number": 1,
+      "question_text": "How much is the one-time remote home office setup stipend?",
+      "source_file": "astratech_employee_handbook.txt",
+      "total_chunks_retrieved": 3,
+      "hits_count": 2,
+      "hit_rate": 66.66666666666666,
+      "manual_assessments": [
+        {
+          "chunk_number": 1,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_4",
+          "text_preview": "n joining. To support comfortable remote work on Wednesdays and Fridays, AstraTech provides a one-ti...",
+          "similarity": 0.1,
+          "char_count": 500,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 3.1,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains domain-specific content (stipend)",
+            "Contains known policy content: 'one-time remote home office setup stipend'",
+            "Contains known policy content: '30 days'"
+          ],
+          "simulated_human_judgment": true
+        },
+        {
+          "chunk_number": 2,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_1",
+          "text_preview": "local time, during which team members are expected to be reachable on Slack. All full-time employees...",
+          "similarity": 0.07462686567164178,
+          "char_count": 499,
+          "is_hit": false,
+          "confidence": "Low",
+          "relevance_score": 0.5,
+          "hit_reasons": [
+            "Contains question keywords"
+          ],
+          "simulated_human_judgment": true
+        },
+        {
+          "chunk_number": 3,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_3",
+          "text_preview": "to standard health insurance, AstraTech provides an annual Wellness Stipend of $800 per employee, re...",
+          "similarity": 0.07246376811594203,
+          "char_count": 499,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 1.3,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains domain-specific content (stipend)"
+          ],
+          "simulated_human_judgment": true
+        }
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_text": "What is the Wi-Fi password for office visitors?",
+      "source_file": "astratech_employee_handbook.txt",
+      "total_chunks_retrieved": 3,
+      "hits_count": 2,
+      "hit_rate": 66.66666666666666,
+      "manual_assessments": [
+        {
+          "chunk_number": 1,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_5",
+          "text_preview": "S, VISITOR WI-FI & CAFETERIA\nThe AstraTech campus is accessible 24 hours a day, 7 days a week using ...",
+          "similarity": 0.06944444444444445,
+          "char_count": 500,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 3.1,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains domain-specific content (wifi)",
+            "Contains known policy content: 'wifi password'",
+            "Contains known policy content: 'AstraTech-Guest'"
+          ],
+          "simulated_human_judgment": true
+        },
+        {
+          "chunk_number": 2,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_4",
+          "text_preview": "n joining. To support comfortable remote work on Wednesdays and Fridays, AstraTech provides a one-ti...",
+          "similarity": 0.056338028169014086,
+          "char_count": 500,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 2.3,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains known policy content: 'one-time remote home office setup stipend'",
+            "Contains known policy content: '30 days'"
+          ],
+          "simulated_human_judgment": true
+        },
+        {
+          "chunk_number": 3,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_1",
+          "text_preview": "local time, during which team members are expected to be reachable on Slack. All full-time employees...",
+          "similarity": 0.04477611940298507,
+          "char_count": 499,
+          "is_hit": false,
+          "confidence": "Low",
+          "relevance_score": 0.5,
+          "hit_reasons": [
+            "Contains question keywords"
+          ],
+          "simulated_human_judgment": true
+        }
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_text": "How many paid sick days are employees entitled to?",
+      "source_file": "astratech_employee_handbook.txt",
+      "total_chunks_retrieved": 3,
+      "hits_count": 3,
+      "hit_rate": 100.0,
+      "manual_assessments": [
+        {
+          "chunk_number": 1,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_1",
+          "text_preview": "local time, during which team members are expected to be reachable on Slack. All full-time employees...",
+          "similarity": 0.05970149253731343,
+          "char_count": 499,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 1.3,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains domain-specific content (sick)"
+          ],
+          "simulated_human_judgment": true
+        },
+        {
+          "chunk_number": 2,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_2",
+          "text_preview": "ocks.\"\n\n## SECTION 2: PAID TIME OFF (PTO) & WELLNESS BENEFITS\nAll full-time employees receive 24 day...",
+          "similarity": 0.056338028169014086,
+          "char_count": 500,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 1.3,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains domain-specific content (sick)"
+          ],
+          "simulated_human_judgment": true
+        },
+        {
+          "chunk_number": 3,
+          "chunk_id": "astratech_employee_handbook.txt#chunk_0",
+          "text_preview": "# ASTRATECH SOLUTIONS: EMPLOYEE HANDBOOK & COMPANY POLICIES\n# DOCUMENT ID: AT-HR-2026-V2\n# AUDIENCE:...",
+          "similarity": 0.028169014084507043,
+          "char_count": 500,
+          "is_hit": true,
+          "confidence": "High",
+          "relevance_score": 1.3,
+          "hit_reasons": [
+            "Contains question keywords",
+            "Contains domain-specific content (sick)"
+          ],
+          "simulated_human_judgment": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "overall_hit_rate": 77.77777777777779,
+    "total_questions": 3,
+    "total_chunks_retrieved": 9,
+    "total_hits": 7,
+    "average_hit_rate": 77.77777777777777,
+    "chunk_size": 500,
+    "chunk_overlap": 125
+  }
+}
